@@ -1,0 +1,16 @@
+{
+	"version": 3,
+	"file": "main.css",
+	"sources": [
+		"../scss/main.scss",
+		"../scss/_colors.scss",
+		"../scss/_layout.scss"
+	],
+	"sourcesContent": [
+		"@import \"./_colors\";\n@import \"./_layout\";\n",
+		"$color-black: #3e4956;\n",
+		"body {\n  background-color: white;\n  color: $color-black;\n}\n"
+	],
+	"names": [],
+	"mappings": "AEAA,AAAA,IAAI,CAAC;EACH,gBAAgB,EAAE,KAAK;EACvB,KAAK,EDFO,OAAO;CCGpB"
+}
