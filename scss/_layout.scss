@@ -1,3 +1,10 @@
+@mixin mainMediaQuery($screen-width, $margin) {
+  @media (max-width: $screen-width) {
+    width: calc(100% - ($margin * 2));
+    margin: 0 $margin 100px;
+  }
+}
+
 body {
   background: $color-dark-grey url(../images/bg.svg) no-repeat center -70px;
   background-size: 5120px 1440px;
@@ -20,12 +27,32 @@ header {
 
 main {
   box-sizing: border-box;
-  width: 960px;
+  max-width: 960px;
   min-height: 960px;
   margin: 0 auto 100px;
   padding: 80px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
+
+  @include mainMediaQuery(1050px, 30px);
+  @include mainMediaQuery(640px, 20px);
+  @include mainMediaQuery(420px, 10px);
+
+
+  // @media (max-width: 1050px) {
+  //   width: calc(100% - 60px);
+  //   margin: 0 30px 100px;
+  // }
+  //
+  // @media (max-width: 640px) {
+  //   width: calc(100% - 40px);
+  //   margin: 0 20px 100px;
+  // }
+  //
+  // @media (max-width: 420px) {
+  //   width: calc(100% - 20px);
+  //   margin: 0 10px 100px;
+  // }
 }
 
 .monogram {
