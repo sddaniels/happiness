@@ -1,21 +1,41 @@
 body {
-  background: #5F5F5F url(../images/bg.svg) no-repeat center -70px;
-  background-size: 5120px 1440px;
+  background: #5F5F5F url(../images/bg.svg) no-repeat center -56px;
+  background-size: 4096px 1152px;
   color: #2A2829;
   margin: 0;
 }
 
+@media (max-width: 1050px) {
+  body {
+    background-position: center -35px;
+    background-size: 2560px 720px;
+  }
+}
+
+@media (max-width: 420px) {
+  body {
+    background-position: center -28px;
+    background-size: 2048px 576px;
+  }
+}
+
 header {
   position: relative;
-  height: 320px;
+  height: 256px;
   overflow: auto;
   text-align: center;
 }
 
-header > h1 {
-  position: relative;
-  margin: 0;
-  top: 90px;
+@media (max-width: 1050px) {
+  header {
+    height: 160px;
+  }
+}
+
+@media (max-width: 420px) {
+  header {
+    height: 128px;
+  }
 }
 
 main {
@@ -30,27 +50,60 @@ main {
 
 @media (max-width: 1050px) {
   main {
-    width: calc(100% - ($margin * 2));
-    margin: 0 30px 100px;
+    width: calc(100% - ($margin-side * 2));
+    margin: 0 30px 80px;
+    padding: 60px;
   }
 }
 
 @media (max-width: 640px) {
   main {
-    width: calc(100% - ($margin * 2));
-    margin: 0 20px 100px;
+    width: calc(100% - ($margin-side * 2));
+    margin: 0 20px 60px;
+    padding: 40px;
   }
 }
 
 @media (max-width: 420px) {
   main {
-    width: calc(100% - ($margin * 2));
-    margin: 0 10px 100px;
+    width: calc(100% - ($margin-side * 2));
+    margin: 0 10px 60px;
+    padding: 20px;
   }
 }
 
 .monogram {
+  position: relative;
+  margin: 0;
+  top: 59px;
+}
+
+@media (max-width: 1050px) {
+  .monogram {
+    top: 35px;
+  }
+}
+
+@media (max-width: 420px) {
+  .monogram {
+    top: 26px;
+  }
+}
+
+.monogram__image {
   width: 200px;
+}
+
+@media (max-width: 1050px) {
+  .monogram__image {
+    width: 130px;
+  }
+}
+
+@media (max-width: 420px) {
+  .monogram__image {
+    width: 110px;
+  }
 }
 
 .browserupgrade {

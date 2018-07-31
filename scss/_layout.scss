@@ -1,27 +1,36 @@
-@mixin mainMediaQuery($screen-width, $margin) {
-  @media (max-width: $screen-width) {
-    width: calc(100% - ($margin * 2));
-    margin: 0 $margin 100px;
-  }
-}
+$size-1000: 1050px;
+$size-600: 640px;
+$size-400: 420px;
 
 body {
-  background: $color-dark-grey url(../images/bg.svg) no-repeat center -70px;
-  background-size: 5120px 1440px;
+  background: $color-dark-grey url(../images/bg.svg) no-repeat center -56px;
+  background-size: 4096px 1152px;
   color: $color-black;
   margin: 0;
+
+  @media (max-width: $size-1000) {
+    background-position: center -35px;
+    background-size: 2560px 720px;
+  }
+
+  @media (max-width: $size-400) {
+    background-position: center -28px;
+    background-size: 2048px 576px;
+  }
 }
 
 header {
   position: relative;
-  height: 320px;
+  height: 256px;
   overflow: auto;
   text-align: center;
 
-  > h1 {
-    position: relative;
-    margin: 0;
-    top: 90px;
+  @media (max-width: $size-1000) {
+    height: 160px;
+  }
+
+  @media (max-width: $size-400) {
+    height: 128px;
   }
 }
 
@@ -34,27 +43,41 @@ main {
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
-  @include mainMediaQuery(1050px, 30px);
-  @include mainMediaQuery(640px, 20px);
-  @include mainMediaQuery(420px, 10px);
+  @mixin mainMediaQuery($screen-width, $margin-side, $margin-bottom, $padding) {
+    @media (max-width: $screen-width) {
+      width: calc(100% - ($margin-side * 2));
+      margin: 0 $margin-side $margin-bottom;
+      padding: $padding;
+    }
+  }
 
-
-  // @media (max-width: 1050px) {
-  //   width: calc(100% - 60px);
-  //   margin: 0 30px 100px;
-  // }
-  //
-  // @media (max-width: 640px) {
-  //   width: calc(100% - 40px);
-  //   margin: 0 20px 100px;
-  // }
-  //
-  // @media (max-width: 420px) {
-  //   width: calc(100% - 20px);
-  //   margin: 0 10px 100px;
-  // }
+  @include mainMediaQuery($size-1000, 30px, 80px, 60px);
+  @include mainMediaQuery($size-600, 20px, 60px, 40px);
+  @include mainMediaQuery($size-400, 10px, 60px, 20px);
 }
 
 .monogram {
-  width: 200px;
+  position: relative;
+  margin: 0;
+  top: 59px;
+
+  @media (max-width: $size-1000) {
+    top: 35px;
+  }
+
+  @media (max-width: $size-400) {
+    top: 26px;
+  }
+
+  &__image {
+    width: 200px;
+
+    @media (max-width: $size-1000) {
+      width: 130px;
+    }
+
+    @media (max-width: $size-400) {
+      width: 110px;
+    }
+  }
 }
