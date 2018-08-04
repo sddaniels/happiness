@@ -3,17 +3,17 @@ $size-600: 640px;
 $size-400: 420px;
 
 body {
-  background: #DDDDDD url(../images/bg.svg) no-repeat center -56px;
+  background: $color-med-gray url(../images/bg.svg) no-repeat center -56px;
   background-size: 4096px 1152px;
   color: $color-black;
   margin: 0;
 
-  @media (max-width: $size-1000) {
+  @media screen and (max-width: $size-1000) {
     background-position: center -35px;
     background-size: 2560px 720px;
   }
 
-  @media (max-width: $size-400) {
+  @media screen and (max-width: $size-400) {
     background-position: center -28px;
     background-size: 2048px 576px;
   }
@@ -39,12 +39,12 @@ main {
   max-width: 960px;
   min-height: 960px;
   margin: 0 auto 100px;
-  padding: 80px;
+  padding: 80px 140px 80px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
   @mixin mainMediaQuery($screen-width, $margin-side, $margin-bottom, $padding) {
-    @media (max-width: $screen-width) {
+    @media screen and (max-width: $screen-width) {
       width: calc(100% - ($margin-side * 2));
       margin: 0 $margin-side $margin-bottom;
       padding: $padding;
