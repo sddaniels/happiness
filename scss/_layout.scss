@@ -34,22 +34,22 @@ main {
   box-sizing: border-box;
   max-width: 960px;
   min-height: 960px;
-  margin: 0 auto 100px;
+  margin: 0 auto 40px;
   padding: 80px 140px 80px;
   background-color: white;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.03);
 
-  @mixin mainMediaQuery($screen-width, $margin-side, $margin-bottom, $padding) {
+  @mixin mainMediaQuery($screen-width, $margin-side, $padding) {
     @media screen and (max-width: $screen-width) {
       width: calc(100% - ($margin-side * 2));
-      margin: 0 $margin-side $margin-bottom;
+      margin: 0 $margin-side 40px;
       padding: $padding;
     }
   }
 
-  @include mainMediaQuery($size-1050, 30px, 80px, 60px);
-  @include mainMediaQuery($size-640, 20px, 60px, 40px);
-  @include mainMediaQuery($size-420, 10px, 60px, 20px);
+  @include mainMediaQuery($size-1050, 30px, 60px);
+  @include mainMediaQuery($size-640, 20px, 40px);
+  @include mainMediaQuery($size-420, 10px, 20px);
 }
 
 .monogram {
@@ -76,4 +76,11 @@ main {
       width: 110px;
     }
   }
+}
+
+footer {
+  margin: 0 0 40px;
+  text-align: center;
+  color: darken($color-med-gray, 25%);
+  text-shadow: 0 1px 0 white;
 }
