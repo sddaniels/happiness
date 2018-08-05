@@ -1,6 +1,7 @@
 p,
 ul,
-ol {
+ol,
+dl {
   font-family: 'Lora', serif;
   font-size: 18px;
   line-height: 26px;
@@ -35,5 +36,25 @@ h2 {
 
   @media screen and (max-width: $size-470) {
     display: inherit;
+  }
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin: 14px 0 0;
+
+  @media screen and (max-width: $size-640) {
+    margin-top: 10px;
+  }
+
+  & + dt {
+    margin-top: 36px;
+
+    @media screen and (max-width: $size-640) {
+      margin-top: 28px;
+    }
   }
 }
