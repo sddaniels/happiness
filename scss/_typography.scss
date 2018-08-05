@@ -2,31 +2,31 @@ p, ul, ol {
   font-family: 'Lora', serif;
   font-size: 18px;
   line-height: 26px;
+
+  @media screen and (max-width: $size-640) {
+    font-size: 14px;
+    line-height: 22px;
+  }
 }
 
 h1 {
   margin-top: 0;
+  margin-bottom: 40px;
   font-family: 'Sacramento', cursive;
   font-size: 42px;
   text-align: center;
   font-weight: 400;
+
+  @media screen and (max-width: $size-640) {
+    font-size: 32px;
+    margin-bottom: 22px;
+  }
 }
 
 .headline-break {
   display: none;
 
-  @media screen and (max-width: 470px) {
+  @media screen and (max-width: $size-470) {
     display: inherit;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  h1 {
-    font-size: 32px;
-  }
-
-  p, ul, ol {
-    font-size: 14px;
-    line-height: 22px;
   }
 }
